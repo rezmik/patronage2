@@ -21,14 +21,22 @@
           <h2 class="mdl-card__title-text">Lista użytkowników</h2>
         </div>
         <div class="mdl-card__supporting-text">
-          {{ error }}
-        </br>
-          <table>
+          <center><table>
+            <thead>
+              <th width=30 height=30 >Id</th>
+              <th width=120 height=30 >Login</th>
+              <th width=40 height=30 >Avatar</th>
+              <th width=120 height=30 >View on GitHub</th>
+            </thead>
+            <tbody>
             <tr ng-repeat="user in uzytkownicy">
-              <td>{{ user.id }}</td>
-              <td>{{ user.login }}</td>
+              <td style="text-align: center;">{{ user.id }}</td>
+              <td> {{ user.login }}</td>
+              <td style="text-align: center;"><img ng-src="{{ user.avatar_url }}" width=30 height=30 /></td>
+              <td style="text-align: center;"><a ng-href="{{ user.html_url }}" target="_blank">Check</a></td>
             </tr>
-          </table>
+            </tbody>
+          </table></center>
         </div>
         <div class="mdl-card__actions mdl-card--border">
           <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
