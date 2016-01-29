@@ -17,7 +17,14 @@
       .state('users', {
         url: '/users',
         templateUrl: 'app/main/users.html',
-        controller: 'UsersConroller'   
+        controller: [ '$scope', '$http', function ( $scope, $http ) {
+          $http({
+            method: 'GET',
+            url: '/app/main/users.json'
+          }).then(function success(response) {
+            $scope.uzytkownicy = response.data.records;
+          });
+        }]  
         //controllerAs: 'user'
 
       })

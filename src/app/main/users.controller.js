@@ -6,15 +6,15 @@
     .controller('UsersController', UsersController);
 
   /** @ngInject */
-  function UsersController( $scope, $http ) {
+  /*function UsersController( $scope, $http ) {
           $http({
             method: 'GET',
             url: '/app/main/users.json'
           }).then(function success(response) {
             $scope.uzytkownicy = response.data.records;
           });
-        }
-  /*function UsersController($timeout, webDevTec, toastr) {
+        }*/
+  function UsersController($timeout, webDevTec, toastr) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -44,4 +44,4 @@
       });
     }
   }
-}*/)();
+})();
